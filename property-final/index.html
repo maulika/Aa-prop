@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Index Page</title>
+<link href="css/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="css/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="css/jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
+<link href="css/myStyle.css" rel="stylesheet" type="text/css"/>
+
+
+<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="js/jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="js/jQueryAssets/jquery-ui-1.9.2.slider.custom.min.js" type="text/javascript"></script>
+
+<script>
+	function init(){
+		onAppResize();
+	}
+	
+	function onAppResize(){
+		var headerH = document.getElementById('headerDiv').style.height;
+		//var footerH = document.getElementById('footerDiv').style.height;
+		headerH = $('#headerDiv').height();
+		//footerH = $('#footerDiv').height();
+	
+		if(headerH == 0){
+			headerH = 50;
+			//footerH = 45;
+		}
+		
+		var appHeight = window.innerHeight;
+		var contentH = appHeight-(headerH)-45;
+	
+		document.getElementById('contentDiv').style.height = contentH+'px';
+	}
+</script>
+</head> 
+<body onResize="onAppResize()" onLoad="init()"> 
+<div data-role="page" id="page" style="height:auto;" class="homemainbg">
+	   <!--Header Start-->
+        <!--<div id="headerDiv" data-role="header" class="myHeaderBG">
+            <a href="#" onClick="document.location.href='#';" class="backBtn">Back</a>
+            <h1 class="headerTitle">Map Results</h1>
+            <a href="#" onClick="document.location.href='#';" class="lightblueBtn">Options</a>
+        </div>-->
+        <!--Header End-->
+        <!--Content Start-->
+        <div data-role="content"  id="contentDiv" class="">	
+        	<div class="london-txt">London</div>
+            <div class="logo"><img src="images/logo.png" alt="" class="logo-img" /></div>
+            <div class="rent-txt">Whether your letting or renting<br/>
+									iProperty Match<br/>
+								is your mobile partner
+            </div>
+            <div class="twobuttons">
+            	<a href="search.html" class="searchBG">Search</a>
+            	<a href="#" class="regBG">Register</a>
+            </div>
+            <div class="login-box">
+              <a href="#" class="login-txt">Login</a>
+            </div>
+        
+        </div>
+        <!--Content End-->
+      </div>
+</body>
+</html>
